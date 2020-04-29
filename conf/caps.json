@@ -1,0 +1,161 @@
+{
+	"tests": [
+		{
+			"test_type": "parallel",
+			"specs": ["./tests/specs/single_test.js", "./tests/specs/another_test.js"],
+			"common_caps":
+				{
+					"project": "BrowserStack",
+					"build": "Automate Demo - WebDriverIO",
+					"name": "Parallel Test - WebDriverIO: "
+				}
+			,
+			"session_caps": [
+				{
+					"os": "Windows",
+					"os_version": "10",
+					"browser": "Internet Explorer",
+					"browser_version": "11.0"
+				},
+				{
+					"os": "Windows",
+					"os_version": "10",
+					"browser": "Chrome",
+					"browser_version": "80.0"
+				},
+				{
+					"os": "OS X",
+					"os_version": "High Sierra",
+					"browser": "Safari",
+					"browser_version": "11.0"
+				},
+				{
+					"os": "OS X",
+					"os_version": "High Sierra",
+					"browser": "Firefox",
+					"browser_version": "73.0"
+				},
+				{
+					"os": "Android",
+					"os_version": "8.0",
+					"device": "Samsung Galaxy S9",
+					"realMobile": true
+				},
+				{
+					"os": "iPhone",
+					"os_version": "12.0",
+					"device": "iPhone XS",
+					"realMobile": true
+				}
+			]
+		},
+		{
+			"test_type": "single",
+			"specs": ["./tests/specs/single_test.js"],
+			"common_caps":
+				{
+					"project": "BrowserStack",
+					"build": "Automate Demo - WebDriverIO",
+					"name": "Single Test - WebDriverIO: "
+				}
+			,
+			"session_caps": [
+				{
+					"os": "OS X",
+					"os_version": "High Sierra",
+					"browser": "Chrome",
+					"browser_version": "70.0"
+				}
+			]
+		},
+		{
+			"test_type": "fail",
+			"specs": ["./tests/specs/failed_test.js"],
+			"common_caps":
+				{
+					"project": "BrowserStack",
+					"build": "Automate Demo - WebDriverIO",
+					"name": "Failed Test - WebDriverIO: "
+				}
+			,
+			"session_caps": [
+				{
+					"os": "OS X",
+					"os_version": "High Sierra",
+					"browser": "Chrome",
+					"browser_version": "80.0"
+				},
+				{
+					"os": "iPhone",
+					"os_version": "12.0",
+					"device": "iPhone XS",
+					"realMobile": true
+				}
+			]
+		},
+		{
+			"test_type": "local",
+			"specs": ["./tests/specs/local_test.js"],
+			"common_caps":
+				{
+					"project": "BrowserStack",
+					"build": "Automate Demo - WebDriverIO",
+					"name": "Local Test - WebDriverIO: ",
+					"browserstack.local": "true"
+				},
+			"session_caps": [
+				{
+					"os": "OS X",
+					"os_version": "High Sierra",
+					"browser": "Chrome",
+					"browser_version": "70.0"
+				},
+				{
+					"os": "Windows",
+					"os_version": "10",
+					"browser": "Firefox",
+					"browser_version": "70.0"
+				},
+				{
+					"os": "Android",
+					"os_version": "8.0",
+					"device": "Samsung Galaxy S9",
+					"realMobile": true
+				},
+				{
+					"os": "iPhone",
+					"os_version": "12.0",
+					"device": "iPhone XS",
+					"realMobile": true
+				}
+			],
+			"local_binding_caps": {
+					"force": "true",
+					"forceLocal": "true",
+					"verbose": "true",
+					"logFile": "local_logs.log"
+			}
+		},
+		{
+			"test_type": "mobile",
+			"specs": ["./tests/specs/single_test.js"],
+			"common_caps":
+				{
+					"project": "BrowserStack",
+					"build": "Automate Demo - WebDriverIO",
+					"name": "Mobile Parallel Test - WebDriverIO: "
+				},
+			"session_caps": [
+				{
+					"device": "Google Pixel",
+					"realMobile": true
+				},
+				{
+					"device": "iPhone 11",
+					"os_version": "13",
+					"realMobile": true
+				}
+			]
+		}
+	]
+}

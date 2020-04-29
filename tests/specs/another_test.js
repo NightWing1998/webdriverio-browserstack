@@ -1,12 +1,12 @@
 var common = require('./helper/common');
 var sessionId;
 var globalStatus = 'complete';
-var actualResult, expectedResult = "BrowserStack - Google Search"
+var actualResult, expectedResult = "BrowserStack - Bing"
 
-describe('Google Search Functionality', () => {
+describe('Bing Search Functionality', () => {
   it('can find search results', () => {
       sessionId = browser.sessionId
-      browser.url('https://www.google.com');
+      browser.url('https://www.bing.com');
       $('[name="q"]').setValue("BrowserStack\n");
       //$('[name="btnK"]').click();
       browser.pause(1000)
@@ -26,7 +26,7 @@ describe('Google Search Functionality', () => {
     const finalTestStatus = this.currentTest.state
     if((finalTestStatus === 'passed' && globalStatus === 'complete') || (finalTestStatus === 'failed') ) {
       if(finalTestStatus === 'passed') {
-        common.mark_test_status(browser.sessionId, finalTestStatus , "Success: expected '"+ expectedResult+ "'" + " matches ''" + actualResult + "'" , this.currentTest.parent.title)
+        common.mark_test_status(browser.sessionId, finalTestStatus , "Success: expected '"+ expectedResult+ "'" + " matches ''" + actualResult + "'", this.currentTest.parent.title)
       }
       else {
         common.mark_test_status(browser.sessionId, finalTestStatus , "expected '"+ expectedResult+ "'" + " to equal ''" + actualResult + "'", this.currentTest.parent.title)

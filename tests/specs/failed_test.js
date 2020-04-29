@@ -1,7 +1,7 @@
 var common = require('./helper/common');
 var sessionId;
 var globalStatus = 'complete';
-var actualResult, expectedResult = "BrowserStack - Google Search"
+var actualResult, expectedResult = "Browserstack google search"
 
 describe('Google Search Functionality', () => {
   it('can find search results', () => {
@@ -12,6 +12,7 @@ describe('Google Search Functionality', () => {
       browser.pause(1000)
       actualResult = browser.getTitle()
       actualResult.should.equal(expectedResult);
+
 
   });
 
@@ -26,7 +27,7 @@ describe('Google Search Functionality', () => {
     const finalTestStatus = this.currentTest.state
     if((finalTestStatus === 'passed' && globalStatus === 'complete') || (finalTestStatus === 'failed') ) {
       if(finalTestStatus === 'passed') {
-        common.mark_test_status(browser.sessionId, finalTestStatus , "Success: expected '"+ expectedResult+ "'" + " matches ''" + actualResult + "'" , this.currentTest.parent.title)
+        common.mark_test_status(browser.sessionId, finalTestStatus , "Success: expected '"+ expectedResult+ "'" + " matches ''" + actualResult + "'", this.currentTest.parent.title)
       }
       else {
         common.mark_test_status(browser.sessionId, finalTestStatus , "expected '"+ expectedResult+ "'" + " to equal ''" + actualResult + "'", this.currentTest.parent.title)
