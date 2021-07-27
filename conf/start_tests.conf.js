@@ -52,7 +52,7 @@ exports.config = {
 	updateJob: false,
 	specs: specs,
 	exclude: [],
-	maxInstances: 50,
+	maxInstances: 5,
 
 	capabilities: capabilities,
 
@@ -64,6 +64,7 @@ exports.config = {
 	connectionRetryTimeout: 90000,
 	connectionRetryCount: 3,
 	host: "hub-usw.browserstack.com",
+	hostname: "hub-usw.browserstack.com",
 
 	before: function () {
 		var chai = require("chai");
