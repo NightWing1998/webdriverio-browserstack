@@ -52,7 +52,7 @@ exports.config = {
 	updateJob: false,
 	specs: specs,
 	exclude: [],
-	maxInstances: 5,
+	maxInstances: 50,
 
 	capabilities: capabilities,
 
